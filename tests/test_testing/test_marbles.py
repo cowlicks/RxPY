@@ -1,7 +1,7 @@
 import unittest
 
-from rx.testing.marbles import marbles_testing
-from rx.testing.reactivetest import ReactiveTest
+from rx3.testing.marbles import marbles_testing
+from rx3.testing.reactivetest import ReactiveTest
 
 #from rx.scheduler import timeout_scheduler, new_thread_scheduler
 

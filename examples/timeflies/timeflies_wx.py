@@ -1,7 +1,7 @@
-import rx
-from rx import operators as ops
-from rx.subject import Subject
-from rx.scheduler.mainloop import WxScheduler
+import rx3
+from rx3 import operators as ops
+from rx3.subject import Subject
+from rx3.scheduler.mainloop import WxScheduler
 
 import wx
 
@@ -53,7 +53,7 @@ def main():
     mapper = ops.map(make_label)
     labeler = ops.flat_map_indexed(handle_label)
 
-    rx.from_(text).pipe(
+    rx3.from_(text).pipe(
         mapper,
         labeler,
     ).subscribe(on_next, on_error=print, scheduler=scheduler)

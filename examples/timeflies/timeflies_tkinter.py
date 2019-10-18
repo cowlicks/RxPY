@@ -1,9 +1,9 @@
 from tkinter import Tk, Label, Frame
 
-import rx
-from rx import operators as ops
-from rx.subject import Subject
-from rx.scheduler.mainloop import TkinterScheduler
+import rx3
+from rx3 import operators as ops
+from rx3.subject import Subject
+from rx3.scheduler.mainloop import TkinterScheduler
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
     labeler = ops.flat_map_indexed(handle_label)
     mapper = ops.map(lambda c: Label(frame, text=c))
 
-    rx.from_(text).pipe(
+    rx3.from_(text).pipe(
         mapper,
         labeler
     ).subscribe(on_next, on_error=print, scheduler=scheduler)

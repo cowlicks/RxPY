@@ -1,10 +1,10 @@
 import asyncio
 from asyncio import Future
 
-import rx
-from rx import operators as ops
-from rx.scheduler.eventloop import AsyncIOScheduler
-from rx.core import Observable
+import rx3
+from rx3 import operators as ops
+from rx3.scheduler.eventloop import AsyncIOScheduler
+from rx3.core import Observable
 
 
 def to_async_generator(sentinel=None):
@@ -54,7 +54,7 @@ def to_async_generator(sentinel=None):
 def go(loop):
     scheduler = AsyncIOScheduler(loop)
 
-    xs = rx.from_([x for x in range(10)], scheduler=scheduler)
+    xs = rx3.from_([x for x in range(10)], scheduler=scheduler)
     gen = xs.pipe(to_async_generator())
 
     # Wish we could write something like:

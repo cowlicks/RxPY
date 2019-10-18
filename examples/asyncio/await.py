@@ -1,8 +1,8 @@
 import asyncio
-import rx
+import rx3
 
 
-stream = rx.just("Hello, world!")
+stream = rx3.just("Hello, world!")
 
 
 async def hello_world():

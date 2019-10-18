@@ -1,7 +1,7 @@
 import datetime
 
-import rx
-import rx.operators as ops
+import rx3
+import rx3.operators as ops
 
 """
 Delay the emission of elements to the specified datetime.
@@ -14,7 +14,7 @@ duetime = now + dt
 print('{} ->  now\n'
       '{} ->  start of emission in {}s'.format(now, duetime, dt.total_seconds()))
 
-hot = rx.hot('10--11--12--13--(14,|)', timespan=0.2, duetime=duetime)
+hot = rx3.hot('10--11--12--13--(14,|)', timespan=0.2, duetime=duetime)
 
 source = hot.pipe(ops.do_action(print))
 source.run()

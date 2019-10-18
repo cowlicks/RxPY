@@ -9,8 +9,8 @@ looping forever.
 
 import time
 
-import rx
-from rx import operators as ops
+import rx3
+from rx3 import operators as ops
 
 
 def failing(x):
@@ -21,7 +21,7 @@ def failing(x):
 
 
 def main():
-    xs = rx.from_marbles("1-2-3-4-5-6-7-9-|").pipe(ops.publish())
+    xs = rx3.from_marbles("1-2-3-4-5-6-7-9-|").pipe(ops.publish())
     xs.pipe(
         ops.map(failing),
         ops.retry()

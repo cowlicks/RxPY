@@ -1,11 +1,11 @@
-import rx
-from rx import operators as ops
+import rx3
+from rx3 import operators as ops
 
-a = rx.cold(' ---a0---a1----------------a2-|    ')
-b = rx.cold('    ---b1---b2---|                 ')
-c = rx.cold('             ---c1---c2---|        ')
-d = rx.cold('                   -----d1---d2---|')
-e1 = rx.cold('a--b--------c-----d-------|       ')
+a = rx3.cold(' ---a0---a1----------------a2-|    ')
+b = rx3.cold('    ---b1---b2---|                 ')
+c = rx3.cold('             ---c1---c2---|        ')
+d = rx3.cold('                   -----d1---d2---|')
+e1 = rx3.cold('a--b--------c-----d-------|       ')
 
 observableLookup = {"a": a, "b": b, "c": c, "d": d}
 

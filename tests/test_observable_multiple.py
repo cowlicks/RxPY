@@ -1,4 +1,4 @@
-from rx.testing import ReactiveTest
+from rx3.testing import ReactiveTest
 
 on_next = ReactiveTest.on_next
 on_completed = ReactiveTest.on_completed

@@ -1,8 +1,8 @@
 import concurrent.futures
 import time
 
-import rx
-from rx import operators as ops
+import rx3
+from rx3 import operators as ops
 
 seconds = [5, 1, 2, 4, 3]
 
@@ -16,7 +16,7 @@ def output(result):
     print('%d seconds' % result)
 
 with concurrent.futures.ProcessPoolExecutor(5) as executor:
-    rx.from_(seconds).pipe(
+    rx3.from_(seconds).pipe(
         ops.flat_map(lambda s: executor.submit(sleep, s))
     ).subscribe(output)
 
